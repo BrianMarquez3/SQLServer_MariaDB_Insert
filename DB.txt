@@ -1,0 +1,10 @@
+
+create database estudiantes
+use estudiantes
+
+CREATE TABLE [dbo].[alumnos](
+	[id] [int]  IDENTITY NOT NULL,
+	[usuario] [varchar](25) NOT NULL,
+	[password] [varchar](25) NOT NULL,
+	[email] [text] NOT NULL
+)
