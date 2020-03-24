@@ -19,5 +19,30 @@ else{
 echo"No Agregado";
 }
 }
+?>
+
+
+<?php
+/*CONEXION A LA BASE DE DATOS MARIADB CON PHP 7.4*/
+
+$servername = "127.0.0.1";
+$database = "estudiantes_mariadb";
+$username = "briandb";
+$password = "briandb";
+    // Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+    // Check connection
+    if (!$conn)
+    {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    echo "Connected successfully";
+
+
+$idusuario=$_POST['usuario'];
+$password=$_POST['password'];
+$email=$_POST['email'];
+$mysql = "INSERT INTO alumnos (usuario,password,email) VALUES ('$idusuario','$password','$email')";
+$sql= mysqli_query($conn, $mysql);
 
 ?>
